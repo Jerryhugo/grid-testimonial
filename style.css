@@ -1,0 +1,143 @@
+:root {
+    /* primary colors */
+    --Moderate-violet: hsl(263, 68%, 61%);
+--Very-dark-grayish-blue: hsl(217, 19%, 35%);
+--Very-dark-blackish-blue: hsl(219, 29%, 14%);
+--White: hsl(0, 0%, 100%);
+
+/* Neutral colors */
+--Light-gray: hsl(0, 0%, 81%);
+--Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+    padding: 5%;
+    color: var(--White);
+    background-color: var(--Light-grayish-blue);
+}
+p {
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+h3 {
+    line-height: 1.5;
+    font-weight: 600;
+}
+article, aside {
+    border-radius: 10px;
+    padding: 8%;
+    margin: 1.5rem 0;
+    box-shadow: 2px 0 10px var(--Light-gray);
+}
+article p, aside p {
+    opacity: 70%;
+}
+img {
+    border-radius: 50%;
+    align-self: center;
+    height: 40px;
+    border: 2px solid var(--Light-gray);
+}
+
+.profile-wrap p:nth-child(1) {
+    font-weight: 600;
+    margin: 0;
+}
+
+.profile-wrap p:nth-child(2) {
+    
+    opacity: 50%;
+}
+
+.profile-wrap p {
+    margin: 0 ;
+}
+.profile-wrap div {
+    margin: 0 1rem;
+}
+
+
+.profile-wrap div {
+    align-self: center;
+}
+
+.profile-wrap {
+    display: flex;
+
+}
+
+   article:nth-child(1){
+        grid-area: t1;
+        background-color: var(--Moderate-violet);
+        background-image: url("images/bg-pattern-quotation.svg");
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: 90%;
+        
+    }
+
+    article:nth-child(2){
+        grid-area: t2;
+        background-color: var(--Very-dark-grayish-blue);
+        
+    }
+    article:nth-child(3){
+        grid-area: t3;
+        background-color: var(--White);
+        color: var(--Very-dark-blackish-blue);
+    }
+    article:nth-child(4){
+        grid-area: t4;
+        background-color: var(--Very-dark-blackish-blue);
+    }
+
+   aside {
+    grid-area: t5;
+    background-color: var(--White);
+    color: var(--Very-dark-blackish-blue);
+   }
+
+   @media only screen and (min-width: 767px) and (max-width: 1024px){
+    main {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 300px));
+        grid-template-areas: 
+            "t1 t1 t1 t2 t2 "
+            "t3 t3 t4 t4 t4 "
+            "t5 t5 t5 t5 t5"
+        ;
+        margin: auto;
+        gap: 1rem;
+        justify-content: center;
+    }
+    article, aside {
+       
+        margin: 0;
+    }
+   }
+
+
+@media only screen and (min-width: 1025px) {
+    main {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 300px));
+        grid-template-areas: 
+            "t1 t1 t2 t5"
+            "t3 t4 t4 t5"
+        ;
+        margin: auto;
+        gap: 1rem;
+        justify-content: center;
+  
+    }
+
+    article, aside {
+        padding: 5% 8%;
+        margin: 0;
+    }
+
+ 
+}
